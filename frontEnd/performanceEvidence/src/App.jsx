@@ -1,13 +1,24 @@
-// import { useState } from 'react'
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import LogIn from "./components/layouts/authentication/Login"
+import Home from "./components/layouts/pages/Home"
 
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <LogIn />,
+  },
+  {
+    path: "Home",
+    element: <Home />
+  }
+])
 
 
 function App() {
 
   return (
     <> 
-      <LogIn />
+      <RouterProvider router={router} />
     </>
   )
 }
